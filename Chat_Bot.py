@@ -1,62 +1,79 @@
-happy_chat = 0
-okay_chat = 0
-sad_chat = 0
+import random
+
+# these are the bot responses to the mood user inputs.
+happy = ["Super-D-Duper! How about helping me finishing this poem? (yes/no/maybe)","Oh yeah?! Then I implore you to finish my sentence? (yes/no/maybe?)","Great to hear! Knock, Knock?! (ask me 'who's there')"]
+okay = ["oki-dokey! Please enjoy the rest of your day.","good to hear. See you later!","ofcourse, take care!"]
+sad = ["sorry to hear that...", "hope everything gets better.","take care."]
+i = 0
 
 def get_bot_response(user_response):
-    print("Hi! How are you feeling, pal?")
-    choice = input()
+    bot_response = input("")
+    return  bot_response
+
+# Just made a countdown until it calls for the 'get_bot_response' function
+
+while i <= 3:
+    i = int(i) + 1
+
+    if i <= 3:
+        print("..." + str(i))
     
-    if choice == "happy":
-        print("Beautiful! Then would you like to help me finish poem?")
-        choice1 = input()
+    elif i == 3 or i > 3:
+        print("\nHello human, How are you feeling? (happy/okay/sad?)")
+        response = get_bot_response("")
 
-        if choice1 == "yes":
-            happy_chat = get_bot_response_happy("")
+        if response == "happy":
+            print(random.choice(happy))
+            response = input("")
+                
+            if happy[0] and response == "yes":
+                print("Roses are ___")
+                response == input("")
+                if response == "red":
+                    print("violets are ____")
+                    response == input("")
+                    if response == "blue":
+                        print("I heart you!")
+                    else:
+                        print("that's not a violet, baby")                        
+                else:
+                    print("that's not a rose, honey")
+                    
+            elif happy[0] and response == "no":
+                print("That's ok. It's been a pleasure!")
+            elif happy[0] and response == "maybe":
+                print("hm... it's okay if you don't. Take it easy!")
+            elif happy[1] and response == "yes":
+                print("tsting")
+            elif happy[1] and response == "no":
+                print("ts22")
+            elif happy[2] and response == "who's there" or response == "who's there?":
+                print("what would you do")
+                response = input("")
+                if response == "what would you do, who" or response == "what would you do, who?" or response == "what would you do who?":
+                    print("What would you do-woo-woo- for a kondak bar")
+            elif happy[2] and response != "who's there" or response != "who's there":
+                print("Ugh-....")
+            elif response == "done":
+                print("Good-Bye!")
+                
+            else:
+                print("...?")
+                
 
-        elif choice1 == "no":
-            print("No sweat. Please continue to have a blessed day, -Goodbye!")
-        
-        else: range(print("hmm-? I'll take that as no. That's fine!"))
+        elif response == "okay":
+            print(random.choice(okay))
+        elif response == "sad":
+            print(random.choice(sad))
+        elif response != "happy" or response != "okay" or response != "sad":
+            print("\nI don't understand. Are you done?")
+            response = input("")
 
-    elif choice == "okay":
-        print("Buddy are you okay? Are you okay, buddy? Because you've been hit by- You've been shot by- a ____")
-        okay_chat = get_bot_response_okay("")
-
-    elif choice == "sad":
-        choices = ["I'm sorry to hear that...", "...", "Breathe easy, please."]
-        saychoices = choices.len
-        let i in range(saychoices):
-            print (choices)
-
-    return choice
-
-def get_bot_response_happy(user_response_happy):
-    print("Please help me finish this sen___ ")
-    chat = input()
-
-    if chat == "tence":
-        print("You smart! Ok, let's move on!\n")
-        print("Roses are ____ ")
-        chat = input()
-
-        if chat == "red":
-            print("violets are ____ ")
-            newchat = input()
-
-            if newchat == "blue":
-                print("I heart you")
-            
-            else: print("that's not a violet, baby...")
-
-
-        elif chat != "red":
-            print("that's not a rose, honey...")
-
-
-        else: print("\n rip for roses")
-
-    else: print("sayonara")
-
-    return chat
-
-chat_bot = get_bot_response("")
+            if response == "yes" or response == "done" or response == "I'm done" or response == "I am done":
+                print("Have a good day!!!")
+            elif response == "no":
+                print("Let's try again \n")
+            else:
+                print("Type in 'done' to ESC!!!\n")
+                
+                
