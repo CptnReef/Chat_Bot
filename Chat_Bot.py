@@ -18,7 +18,7 @@ while i <= 3:
     if i <= 3:
         print("..." + str(i))
     
-    elif i == 3 or i > 3:
+    if i >= 3 or i > 3:
         print("\nHello human, How are you feeling? (happy/okay/sad?)")
         response = get_bot_response("")
 
@@ -59,8 +59,6 @@ while i <= 3:
                 
             else:
                 print("...?")
-                
-
         elif response == "okay":
             print(random.choice(okay))
         elif response == "sad":
@@ -68,12 +66,15 @@ while i <= 3:
         elif response != "happy" or response != "okay" or response != "sad":
             print("\nI don't understand. Are you done?")
             response = input("")
-
             if response == "yes" or response == "done" or response == "I'm done" or response == "I am done":
                 print("Have a good day!!!")
+                continue
             elif response == "no":
                 print("Let's try again \n")
+                continue
             else:
                 print("Type in 'done' to ESC!!!\n")
-                
-                
+                continue
+        continue        
+
+
